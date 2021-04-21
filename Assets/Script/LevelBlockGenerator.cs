@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevelBlockGenerator : MonoBehaviour {
 
-
     public LevelBlock levelBlock;
     public LevelBlock lastLevelBlock;
     public LevelBlock currentLevelBlock;
@@ -16,7 +15,6 @@ public class LevelBlockGenerator : MonoBehaviour {
         AddNewBlock();
         InvokeRepeating("GenerateNewBlockPipe", 0, blockGenerationTime);
 	}
-	
 	// Update is called once per frame
 	void Update ()
     {
@@ -27,7 +25,6 @@ public class LevelBlockGenerator : MonoBehaviour {
         {
             RemoveOldBlock();
         }
-		
 	}
     public void AddNewBlock()
     {
@@ -48,7 +45,6 @@ public class LevelBlockGenerator : MonoBehaviour {
         lastLevelBlock = currentLevelBlock;
         AddNewBlock();
     }
-
     public void GenerateNewBlockPipe()
     {
         float distanceToGenerate = levelBlock.width/2;
@@ -59,8 +55,5 @@ public class LevelBlockGenerator : MonoBehaviour {
         pipePosition = new Vector3(Camera.main.transform.position.x + distanceToGenerate, randomY, 0);
 
         pipeBlock.transform.position = pipePosition;
-
-        
-
     }
 }
